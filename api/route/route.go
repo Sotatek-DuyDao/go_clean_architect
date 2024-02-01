@@ -6,6 +6,5 @@ func RouteSetup(routerGroup *echo.Echo) {
 	publicRouter := routerGroup.Group("")
 
 	NewAuthRoute(publicRouter)
-	//protectedRouter := routerGroup.Group("")
 
 }
