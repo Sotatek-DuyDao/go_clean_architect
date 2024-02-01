@@ -9,6 +9,5 @@ var loginController = controller.LoginController{}
 
 func NewAuthRoute(r *echo.Group) {
 	authRoute := r.Group("/auth")
-
 	authRoute.POST("/sign-up", loginController.Register)
 }

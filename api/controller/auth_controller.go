@@ -42,11 +42,11 @@ func (lc LoginController) Register(c echo.Context) error {
 		return c.JSON(400, map[string]interface{}{"error": "Validation error", "details": errMsg})
 	}
 
-	user, err := usecase.SignUp(u, authRepository)
+	accessToken, err := usecase.SignUp(u, authRepository)
 
 	if err != nil {
 		return c.JSON(http.StatusBadRequest, map[string]interface{}{"success": false, "message": err.Error()})
 	}
 
-	return c.JSON(http.StatusCreated, map[string]interface{}{"success": true, "data": user})
+	return c.JSON(http.StatusCreated, map[string]interface{}{"success": true, "data": accessToken})
 }

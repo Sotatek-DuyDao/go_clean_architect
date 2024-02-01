@@ -7,8 +7,6 @@ type (
 		Email    string `json:"email" validate:"required,email"`
 	}
 	SignUpResponse struct {
-		Id       uint   `json:"id"`
-		Username string `json:"username"`
-		Email    string `json:"email"`
+		AccessToken string `json:"access_token"`
 	}
 )
